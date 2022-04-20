@@ -1,4 +1,4 @@
-    constructor ()
-    {
-        super({ key: 'sceneC' });
-    }
+constructor ()
+{
+    super({ key: 'sceneC' });
+}

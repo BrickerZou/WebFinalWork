@@ -2,7 +2,7 @@ import Scene0 from "./scene.js";
 import SceneA from "./sceneA.js";
 var config = {
     Extends: Phaser.Scene,
-    parent:"container",
+    parent:"game",
     type: Phaser.AUTO,
     width: 800,
     height: 600,
@@ -20,4 +20,10 @@ var config = {
 
 }
 
-var game = new Phaser.Game(config);
+var game;
+$(".start-level1").click(function(){
+    $(this).hide();
+    
+    game=new Phaser.Game(config);
+
+})
