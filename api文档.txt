@@ -1,5 +1,36 @@
+给scene绑定key
 constructor ()
 {
-    super({ key: 'sceneC' });
+    super({ key: 'scene0' });
 }
-rc
+
+// 绑定事件
+obj.on('turnRed', this.handler);
+// 执行,obj为传递的参数
+obj.emit('turnRed', obj);
+//
+e.s:
+对静态物体绑定点击事件
+var box = this.add.image(x, y, 'crate');
+box.setInteractive();
+box.on('clicked', this.clickHandler, this);
+
+
+//绑定键盘
+keyA = this.input.keyboard.addKey(Phaser.Input.Keyboard.KeyCodes.A);
+key5 = this.input.keyboard.addKey(Phaser.Input.Keyboard.KeyCodes.FIVE);
+keySpace = this.input.keyboard.addKey(Phaser.Input.Keyboard.KeyCodes.SPACE);
+  if (keyA.isDown).....actions
+
+//字符集
+keys = this.input.keyboard.addKeys('P,H,A,S,E,R');
+禁用
+this.input.keyboard.enabled = false在场景中执行此操作以停止所有输入
+this.input.keyboard.preventDefault = false停止在另一个场景上输入
+
+this.input.keyboard.on('keyup', function (event) {
+    if (event.keyCode === )获取点击的键
+    
+//显示文本
+var input = this.add.bitmapText(130, 50, 'arcade', 'ABCDEFGHIJ\n\nKLMNOPQRST\n\nUVWXYZ.-').setLetterSpacing(20);
+input.setInteractive();

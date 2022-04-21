@@ -1,5 +1,7 @@
 import Scene0 from "./scene.js";
 import SceneA from "./sceneA.js";
+import SceneB from "./sceneB.js";
+
 var config = {
     Extends: Phaser.Scene,
     parent:"game",
@@ -14,8 +16,8 @@ var config = {
         }
     },
     scene: [
-        Scene0,
-        SceneA,
+        // Scene0,
+        SceneB,
     ]
 
 }
@@ -23,7 +25,5 @@ var config = {
 var game;
 $(".start-level1").click(function(){
     $(this).hide();
-    
     game=new Phaser.Game(config);
-
 })

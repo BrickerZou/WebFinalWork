@@ -100,6 +100,7 @@ create ()
     });
 
     //  cursors为一个输入事件的类
+    // 创建并返回一个对象，其中包含向上、向下、向左和向右的 4 个热键，以及空格键和 shift。
     cursors = this.input.keyboard.createCursorKeys();
 
 
@@ -170,7 +171,7 @@ update ()
         return;
     }
     // 方向左键按下
-    if (cursors.left.isDown)
+    if (cursors.left.isDown )
     {   
         // 设置x轴速度
         player.setVelocityX(-160);  
