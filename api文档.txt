@@ -64,6 +64,6 @@ this.tweens.add({
     repeatDelay: 1000,
     //到达效果维持多长时间，开始继续下一次循环
     hold: 1000
-    //使转换流畅
+    //使转换流畅 
     yoyo: true,
 });
