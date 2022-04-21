@@ -4,7 +4,7 @@ import SceneB from "./sceneB.js";
 
 var config = {
     Extends: Phaser.Scene,
-    parent:"game",
+    // parent:"game",
     type: Phaser.AUTO,
     width: 800,
     height: 600,
@@ -16,14 +16,14 @@ var config = {
         }
     },
     scene: [
-        // Scene0,
-        SceneB,
+        Scene0,
+        // SceneB,
     ]
 
 }
 
-var game;
-$(".start-level1").click(function(){
-    $(this).hide();
-    game=new Phaser.Game(config);
-})
+var game=new Phaser.Game(config);
+// $(".start-level1").click(function(){
+//     $(this).hide();
+//     game=new Phaser.Game(config);
+// })

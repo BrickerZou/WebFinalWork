@@ -24,12 +24,12 @@ const Scene0 = new Phaser.Class({
     preload :function()
 {   
     // 加载图片 例如设置sky为图片id，后面可直接使用sky代表图片
-    this.load.image('sky', 'assets/assets/back/nightsky.png');
+    this.load.image('sky', 'assets/sky.png');
     this.load.image('ground', 'assets/assets/board/prisonboard.png');
     this.load.image('fangwu1', 'assets/fangwu1.png');
     this.load.image('kezhan1', 'assets/kezhan1.png');
     this.load.image('baodian1', 'assets/baodian1.png');
-
+    this.load.audio('bgmusic', 'assets/back.mp3')
     this.load.image('cloud1', cloud1);
     this.load.image('star', 'assets/star.png');
     this.load.image('bomb', 'assets/bomb.png');
@@ -46,11 +46,25 @@ create ()
     //  this.scene.start(game1);
 
     // 在x=0,y=0位置放置图片     设置图片原点为0,0,否则默认为中心点
-    this.add.image(0, 0, 'sky').setOrigin(0, 0);
+    this.sound.play('bgmusic');
+    var skry=this.add.image(0, 0, 'sky').setOrigin(0, 0);
     this.add.image(800, 0, 'sky').setOrigin(0, 0).setFlipX(true);
     this.add.image(100,100,'moon').setScale(0.5).setOrigin(0,0).setScrollFactor(0.5,1);
     this.add.image(100,100,'cloud1').setScale(0.5).setOrigin(0,0).setScrollFactor(0,1);
     this.add.image(300,100,'cloud1').setScale(0.5).setOrigin(0,0).setScrollFactor(0,1);
+    
+   var tween = this.tweens.add({
+        targets: skry,
+        alpha: 0.1,
+        delay: 2000,
+        duration: 6000,
+        repeat:-1,
+        yoyo: true,
+    });
+    
+    
+    
+    
     // 增加一个静态group
     platforms = this.physics.add.staticGroup();
     // 创建一个平台,放在x=0，y=555处 以ground为背景，宽度扩大3倍。
@@ -177,8 +191,9 @@ update ()
         player.setVelocityX(-160);  
         player.anims.play('left', true);
         direction="left";
+        // 可以理解为变身
+        player.setTexture('moon');
 
-      
 
        
     }

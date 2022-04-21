@@ -4,13 +4,13 @@ constructor ()
     super({ key: 'scene0' });
 }
 
-// 绑定事件
+// 绑定事件 pointerdown,pointerup
 obj.on('turnRed', this.handler);
 // 执行,obj为传递的参数
 obj.emit('turnRed', obj);
 //
 e.s:
-对静态物体绑定点击事件
+对静态物体绑定点击事件setInteractive();
 var box = this.add.image(x, y, 'crate');
 box.setInteractive();
 box.on('clicked', this.clickHandler, this);
@@ -34,3 +34,36 @@ this.input.keyboard.on('keyup', function (event) {
 //显示文本
 var input = this.add.bitmapText(130, 50, 'arcade', 'ABCDEFGHIJ\n\nKLMNOPQRST\n\nUVWXYZ.-').setLetterSpacing(20);
 input.setInteractive();
+
+// 可以理解为变身
+player.setTexture('moon');  
+
+
+
+#tween
+//冷冻加快事件
+timeScale(1)
+
+使用示例
+this.tweens.add({
+    targets: image,
+
+    //要渐变达到的属性值
+    //透明度渐变成1,x,y到哪
+    x:,y:
+    alpha: 1,
+
+
+    //两秒后开始
+    delay: 2000,
+    //一共用6秒
+    duration: 6000
+    //-1为重复
+    repeat: -1,
+    //
+    repeatDelay: 1000,
+    //到达效果维持多长时间，开始继续下一次循环
+    hold: 1000
+    //使转换流畅
+    yoyo: true,
+});
