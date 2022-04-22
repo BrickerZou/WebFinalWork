@@ -45,15 +45,15 @@ player.setTexture('moon');
 timeScale(1)
 
 使用示例
-this.tweens.add({
+var obj=this.tweens.add({
     targets: image,
 
     //要渐变达到的属性值
     //透明度渐变成1,x,y到哪
-    x:,y:
+    x,y:
     alpha: 1,
-
-
+    //
+    ease:
     //两秒后开始
     delay: 2000,
     //一共用6秒
@@ -62,8 +62,16 @@ this.tweens.add({
     repeat: -1,
     //
     repeatDelay: 1000,
-    //到达效果维持多长时间，开始继续下一次循环
+    //到达效果维持多长时间，开始继续下一次循环 ，与yoyo对应
     hold: 1000
-    //使转换流畅 
+    //是否返回
     yoyo: true,
+    //设置初始暂停
+    paused: true
 });
+//停止动画
+obj.stop();
+obj.play();
+
+
+tween.updateTo('x', this.input.x, true);

@@ -10,7 +10,8 @@ var gameOver = false;
 var scoreText;
 
 
-
+var tween;
+var i=1;
 const Scene0 = new Phaser.Class({
     Extends: Phaser.Scene,
    
@@ -53,14 +54,14 @@ create ()
     this.add.image(100,100,'cloud1').setScale(0.5).setOrigin(0,0).setScrollFactor(0,1);
     this.add.image(300,100,'cloud1').setScale(0.5).setOrigin(0,0).setScrollFactor(0,1);
     
-   var tween = this.tweens.add({
-        targets: skry,
-        alpha: 0.1,
-        delay: 2000,
-        duration: 6000,
-        repeat:-1,
-        yoyo: true,
-    });
+//    var tween = this.tweens.add({
+//         targets: skry,
+//         alpha: 0.1,
+//         delay: 2000,
+//         duration: 6000,
+//         repeat:-1,
+//         yoyo: true,
+//     });
     
     
     
@@ -83,6 +84,22 @@ create ()
     //   设置玩家的反弹值为0.2 ，且与世界边缘产生碰撞，否则可以移动出画面
     player.setBounce(0.2);
     player.setCollideWorldBounds(true);
+
+    tween = this.tweens.add({
+        targets: player,
+        x:700,
+        // frames: this.anims.generateFrameNumbers('dude', { start: 1, end: 4 }),
+        delay: 2000,
+        duration: 8000,
+        onUpdate:TweenOnUpdateCallback,
+        // repeat:-1,
+        // yoyo: true,
+    });
+    function TweenOnUpdateCallback(tween,player, param){
+        // console.log(player.texture.)
+       
+    };
+    
     
     
     // 创建精灵行为
@@ -178,6 +195,14 @@ create ()
 update ()
 {   
 
+    // if (tween.isPlaying())
+    // {   
+         
+       
+    //     // player.setFrame((i++)%8,false,false)
+    //     // tween.updateTo('frames',(i++)%8, true);
+       
+    // }
     // 设置玩家移动
     if (gameOver)
     {
@@ -193,6 +218,8 @@ update ()
         direction="left";
         // 可以理解为变身
         player.setTexture('moon');
+
+        console.log(player)
 
 
        

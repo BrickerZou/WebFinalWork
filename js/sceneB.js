@@ -15,7 +15,7 @@ const SceneB = new Phaser.Class({
         this.add.image(0, 0, 'skyA').setOrigin(0, 0).setScale(2);
         
             
-   },
+   }, 
    update(){
 
    }
