@@ -42,4 +42,4 @@ const SceneA = new Phaser.Class({
    }
 
 });
-export default SceneA;
+export default SceneA; 
