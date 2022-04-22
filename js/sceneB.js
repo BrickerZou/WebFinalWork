@@ -1,5 +1,5 @@
 
-<<<<<<< Updated upstream
+
 const SceneB = new Phaser.Class({
     
     Extends: Phaser.Scene,
@@ -23,7 +23,7 @@ const SceneB = new Phaser.Class({
 
 });
 export default SceneB;
-=======
+
 var player;
 var direction;
 var stars;
@@ -276,5 +276,5 @@ update ()
 
 
 
-export default Scene0;
->>>>>>> Stashed changes
+
+
