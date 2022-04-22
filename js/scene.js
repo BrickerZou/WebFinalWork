@@ -12,6 +12,7 @@ var scoreText;
 
 var tween;
 var i=1;
+var ryu;
 const Scene0 = new Phaser.Class({
     Extends: Phaser.Scene,
    
@@ -25,19 +26,15 @@ const Scene0 = new Phaser.Class({
     preload :function()
 {   
     // 加载图片 例如设置sky为图片id，后面可直接使用sky代表图片
-    this.load.image('sky', 'assets/sky.png');
+    this.load.image('sky', 'assets/assets/back/sky1.png');
     this.load.image('ground', 'assets/assets/board/prisonboard.png');
-    this.load.image('fangwu1', 'assets/fangwu1.png');
-    this.load.image('kezhan1', 'assets/kezhan1.png');
-    this.load.image('baodian1', 'assets/baodian1.png');
-    this.load.audio('bgmusic', 'assets/back.mp3')
+ 
     this.load.image('cloud1', cloud1);
-    this.load.image('star', 'assets/star.png');
-    this.load.image('bomb', 'assets/bomb.png');
+
     this.load.image('moon','assets/assets/decoration/moon1.png')
-    this.load.image('wall','assets/assets/decoration/nightwall2.png')
+    // this.load.image('wall','assets/assets/decoration/nightwall2.png')
     this.load.image('house','assets/assets/decoration/house4.png')
-    this.load.spritesheet('dude', 'assets/css_sprites_1.png', { frameWidth: 32, frameHeight: 45 });
+    this.load.spritesheet('dude', 'assets/assets/charactor/shusheng.png', { frameWidth: 32, frameHeight: 45 });
 },
 create ()
 {       
@@ -49,7 +46,7 @@ create ()
     //  this.scene.start(game1);
 
     // 在x=0,y=0位置放置图片     设置图片原点为0,0,否则默认为中心点
-    this.sound.play('bgmusic');
+    // this.sound.play('bgmusic');
     var skry=this.add.image(0, 0, 'sky').setOrigin(0, 0);
     this.add.image(800, 0, 'sky').setOrigin(0, 0).setFlipX(true);
     this.add.image(100,100,'moon').setScale(0.5).setOrigin(0,0).setScrollFactor(0.5,1);
@@ -87,20 +84,20 @@ create ()
     player.setBounce(0.2);
     player.setCollideWorldBounds(true);
 
-    tween = this.tweens.add({
-        targets: player,
-        x:700,
-        // frames: this.anims.generateFrameNumbers('dude', { start: 1, end: 4 }),
-        delay: 2000,
-        duration: 8000,
-        onUpdate:TweenOnUpdateCallback,
-        // repeat:-1,
-        // yoyo: true,
-    });
-    function TweenOnUpdateCallback(tween,player, param){
-        // console.log(player.texture.)
+    // tween = this.tweens.add({
+    //     targets: player,
+    //     x:700,
+    //     // frames: this.anims.generateFrameNumbers('dude', { start: 1, end: 4 }),
+    //     delay: 2000,
+    //     duration: 8000,
+    //     onUpdate:TweenOnUpdateCallback,
+    //     // repeat:-1,
+    //     // yoyo: true,
+    // });
+    // function TweenOnUpdateCallback(tween,player, param){
+    //     // console.log(player.texture.)
        
-    };
+    // };
     
     
     
@@ -132,6 +129,25 @@ create ()
         frameRate: 20
     });
 
+    
+    ryu = this.add.sprite(100, 350).play('right','true');
+
+    tween = this.tweens.add({
+        
+            targets: ryu.anims,
+            x:700,//{from:,to:}
+            ease: 'Sine.inOut',
+            // frames: this.anims.generateFrameNumbers('dude', { start: 1, end: 4 }),
+            delay: 2000,
+            duration: 8000,
+            // onUpdate:TweenOnUpdateCallback,
+            // repeat:-1,
+            // yoyo: true,
+        });
+    
+
+
+   
     //  cursors为一个输入事件的类
     // 创建并返回一个对象，其中包含向上、向下、向左和向右的 4 个热键，以及空格键和 shift。
     cursors = this.input.keyboard.createCursorKeys();
@@ -196,6 +212,12 @@ create ()
 
 update ()
 {   
+    if(ryu.x>600){
+        ryu.stop();
+    }
+    else{
+        ryu.x+=2;
+    }
 
     // if (tween.isPlaying())
     // {   
