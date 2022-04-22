@@ -1,3 +1,5 @@
+//back area
+
 const desertack1='assets/assets/back/desertback1.png';
 const desertack2='assets/assets/back/desertback2.png';
 const insideback1='assets/assets/back/insideback1.png';
@@ -7,6 +9,10 @@ const nightsky1='assets/assets/back/nightsky1.png';
 const nightsky2='assets/assets/back/nightsky2.png';
 const prisonback='assets/assets/back/prisonback.png';
 const sky1='assets/assets/back/sky1.png';
+const sky2='assets/assets/back/sky2.png';
+
+//board area
+
 const desertboard1='assets/assets/board/desertboard1.png';
 const desertboard2='assets/assets/board/desertboard2.png';
 const grassboard1='assets/assets/board/grassboard1.png';
@@ -17,10 +23,14 @@ const insideboard2='assets/assets/board/insideboard2.png';
 const prisonboard='assets/assets/board/prisonboard.png';
 const stoneboard1='assets/assets/board/stoneboard1.png';
 const stoneboard2='assets/assets/board/stoneboard2.png';
+
+//decoration area
+
 const bird='assets/assets/decoration/bird.png';
 const bookshelf1='assets/assets/decoration/bookshelf1.png';
 const bookshelf2='assets/assets/decoration/bookshelf2.png';
 const cactus1='assets/assets/decoration/cactus1.png';
+const chicken='assets/assets/decoration/chicken.png';
 const cloud1='assets/assets/decoration/cloud1.png';
 const cloud2='assets/assets/decoration/cloud2.png';
 const cloud3='assets/assets/decoration/cloud3.png';
@@ -43,6 +53,7 @@ const house5='assets/assets/decoration/house5.png';
 const house6='assets/assets/decoration/house6.png';
 const house7='assets/assets/decoration/house7.png';
 const house8='assets/assets/decoration/house8.png';
+const house9='assets/assets/decoration/house9.png';
 const moon1='assets/assets/decoration/moon1.png';
 const moon2='assets/assets/decoration/house2.png';
 const paper1='assets/assets/decoration/paper1.png';
