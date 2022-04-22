@@ -79,3 +79,20 @@ tween.updateTo('x', this.input.x, true);
 
 
 group = this.add.group({ key: 'diamonds', frame: 3, frameQuantity: 50, setXY: { x: 32, y: 32, stepX: 14 }});
+
+
+
+
+
+
+#scene0
+//暂停
+this.scene.pause("scene0")
+//恢复
+this.scene.resume("scene0")
+//删除
+this.scene.remove("scene0")
+//启动
+this.scene.launch("scene0")
+this.scene.start("scene0")
+this.scene.run("scene0")

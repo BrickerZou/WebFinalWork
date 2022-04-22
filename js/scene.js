@@ -28,7 +28,7 @@ const Scene0 = new Phaser.Class({
     // 加载图片 例如设置sky为图片id，后面可直接使用sky代表图片
     this.load.image('sky', 'assets/assets/back/sky1.png');
     this.load.image('ground', 'assets/assets/board/prisonboard.png');
- 
+    this.load.image('star', 'assets/assets/decoration/star1.png');
     this.load.image('cloud1', cloud1);
 
     this.load.image('moon','assets/assets/decoration/moon1.png')
