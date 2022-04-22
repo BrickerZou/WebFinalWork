@@ -29,11 +29,20 @@ const Scene0 = new Phaser.Class({
     this.load.image('fangwu1', 'assets/fangwu1.png');
     this.load.image('kezhan1', 'assets/kezhan1.png');
     this.load.image('baodian1', 'assets/baodian1.png');
+<<<<<<< Updated upstream
     this.load.audio('bgmusic', 'assets/back.mp3')
     this.load.image('cloud1', cloud1);
     this.load.image('star', 'assets/star.png');
+=======
+
+    this.load.image('cloud1', 'assets/assets/decoration/nightcloud1.png');
+    this.load.image('cloud2','assets/assets/decoration/nightcloud2.png')
+    this.load.image('star', 'assets/assets/decoration/star1.png');
+>>>>>>> Stashed changes
     this.load.image('bomb', 'assets/bomb.png');
     this.load.image('moon','assets/assets/decoration/moon1.png')
+    this.load.image('wall','assets/assets/decoration/nightwall2.png')
+    this.load.image('house','assets/assets/decoration/house4.png')
     this.load.spritesheet('dude', 'assets/css_sprites_1.png', { frameWidth: 32, frameHeight: 45 });
 },
 create ()
@@ -49,6 +58,7 @@ create ()
     this.sound.play('bgmusic');
     var skry=this.add.image(0, 0, 'sky').setOrigin(0, 0);
     this.add.image(800, 0, 'sky').setOrigin(0, 0).setFlipX(true);
+<<<<<<< Updated upstream
     this.add.image(100,100,'moon').setScale(0.5).setOrigin(0,0).setScrollFactor(0.5,1);
     this.add.image(100,100,'cloud1').setScale(0.5).setOrigin(0,0).setScrollFactor(0,1);
     this.add.image(300,100,'cloud1').setScale(0.5).setOrigin(0,0).setScrollFactor(0,1);
@@ -65,6 +75,13 @@ create ()
     
     
     
+=======
+    this.add.image(100,100,'moon').setScale(0.5).setOrigin(0,0).setScrollFactor(0,1);
+    this.add.image(100,100,'cloud1').setScale(0.5).setOrigin(0,0).setScrollFactor(0.1,1);
+    this.add.image(300,150,'cloud1').setScale(0.5).setOrigin(0,0).setScrollFactor(0.1,1);
+    this.add.image(600,120,'cloud2').setScale(0.5).setOrigin(0,0).setScrollFactor(0.1,1);
+    this.add.image(-30,240,'wall').setScale(1).setOrigin(0,0).setScrollFactor(0.5,1);
+>>>>>>> Stashed changes
     // 增加一个静态group
     platforms = this.physics.add.staticGroup();
     // 创建一个平台,放在x=0，y=555处 以ground为背景，宽度扩大3倍。
@@ -120,8 +137,8 @@ create ()
 
     stars = this.physics.add.group({
         key: 'star',
-        repeat: 11,
-        setXY: { x: 12, y: 0, stepX: 70 }
+        repeat: 5,
+        setXY: { x: 12, y: 30, stepX: 200 }
     });
     
 
@@ -131,11 +148,11 @@ create ()
         child.setBounceY(Phaser.Math.FloatBetween(0.4, 0.8));
 
     });
-    stars.children.iterate(function (child) {
-        // 设置Y方向的弹性值,为0.4-0.8的随机数
-        child.disableBody(true, true);
+    // stars.children.iterate(function (child) {
+    //     // 设置Y方向的弹性值,为0.4-0.8的随机数
+    //     child.disableBody(true, true);
 
-    });
+    // });
     
 
     bombs = this.physics.add.group();
