@@ -59,7 +59,3 @@ const weapon='assets/assets/decoration/weapon.png';
 
 
 
-<<<<<<< Updated upstream
-=======
-
->>>>>>> Stashed changes

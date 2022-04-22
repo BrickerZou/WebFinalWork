@@ -73,5 +73,9 @@ var obj=this.tweens.add({
 obj.stop();
 obj.play();
 
-
+// x坐标移动到鼠标位置
 tween.updateTo('x', this.input.x, true);
+
+
+
+group = this.add.group({ key: 'diamonds', frame: 3, frameQuantity: 50, setXY: { x: 32, y: 32, stepX: 14 }});
