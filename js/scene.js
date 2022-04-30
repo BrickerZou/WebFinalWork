@@ -32,29 +32,32 @@ const Scene0 = new Phaser.Class({
     this.load.image('star', 'assets/assets/decoration/star1.png');
     this.load.image('cloud1', cloud1);
 
-    this.load.image('moon','assets/assets/decoration/moon1.png')
+    // this.load.image('moon','assets/assets/decoration/moon1.png')
     // this.load.image('wall','assets/assets/decoration/nightwall2.png')
-    this.load.image('house','assets/assets/decoration/house4.png')
+    this.load.image('house1',house1)
+    this.load.image('house2',house2)
     this.load.spritesheet('dude', 'assets/assets/charactor/shusheng.png', { frameWidth: 32, frameHeight: 45 });
     this.load.image('duihua', 'assets/duihuakuang.png');
 },
 create ()
 {       
     // 设置游戏总界限，不同于画面大小
-    this.cameras.main.setBounds(0, 0, 800 * 2, 600 );
-    this.physics.world.setBounds(0, 0, 800 * 2, 600 );
+    this.cameras.main.setBounds(0, 0, 1000*2, 600 );
+    this.physics.world.setBounds(0, 0, 1000*2, 600 );
 
     // 开启另一'game1'场景
     //  this.scene.start(game1);
 
     // 在x=0,y=0位置放置图片     设置图片原点为0,0,否则默认为中心点
     // this.sound.play('bgmusic');
-    var skry=this.add.image(0, 0, 'sky').setOrigin(0, 0);
-    this.add.image(800, 0, 'sky').setOrigin(0, 0).setFlipX(true);
-    this.add.image(100,100,'moon').setScale(0.5).setOrigin(0,0).setScrollFactor(0.5,1);
-    this.add.image(100,100,'cloud1').setScale(0.5).setOrigin(0,0).setScrollFactor(0,1);
-    this.add.image(300,100,'cloud1').setScale(0.5).setOrigin(0,0).setScrollFactor(0,1);
-    
+    //setFlipX()用于水平反转图片，默认为false
+    //setFlipY()垂直翻转
+    var sky=this.add.image(0, 0, 'sky').setOrigin(0, 0);
+    this.add.image(1300, 0, 'sky').setOrigin(0, 0).setFlipX(false);
+    // this.add.image(100,100,'moon').setScale(0.5).setOrigin(0,0).setScrollFactor(0.5,1);
+    this.add.image(100,20,'cloud1').setScale(0.2).setOrigin(0,0).setScrollFactor(0.1,1);
+    this.add.image(300,40,'cloud1').setScale(0.2).setOrigin(0,0).setScrollFactor(0.1,1);
+
 //    var tween = this.tweens.add({
 //         targets: skry,
 //         alpha: 0.1,
@@ -71,8 +74,9 @@ create ()
     platforms = this.physics.add.staticGroup();
     // 创建一个平台,放在x=0，y=555处 以ground为背景，宽度扩大3倍。
     // setDisplaySize(1000,45)和setScale(2,1)都会拉伸失真
-    platforms.create(0, 510, 'ground').setScale(2,2).setOrigin(0, 0).refreshBody();
-    platforms.create(599, 510, 'ground').setScale(2,2).setOrigin(0, 0).refreshBody();
+    platforms.create(-400, 450, 'ground').setScale(2,2).setOrigin(0, 0).refreshBody();
+    platforms.create(1200, 450, 'ground').setScale(2,2).setOrigin(0, 0).refreshBody();
+    this.add.image(800,223,'house1').setOrigin(0,0).setFlipX(true);
     
     // 增加一个精灵，即主角
     player = this.physics.add.sprite(100, 350, 'dude').setScale(1.5).setOrigin(0, 0);
@@ -132,8 +136,8 @@ create ()
     });
 
     
-    ryu = this.add.sprite(100, 350).play('right','true');
-
+    ryu = this.add.sprite(100, 350);
+    //ryu = this.add.sprite(100, 350); .play('right','true')
     tween = this.tweens.add({
         
             targets: ryu.anims,
@@ -168,11 +172,11 @@ create ()
         child.setBounceY(Phaser.Math.FloatBetween(0.4, 0.8));
 
     });
-    // stars.children.iterate(function (child) {
-    //     // 设置Y方向的弹性值,为0.4-0.8的随机数
-    //     child.disableBody(true, true);
+    stars.children.iterate(function (child) {
+        // 设置Y方向的弹性值,为0.4-0.8的随机数
+        child.disableBody(true, true);
 
-    // });
+    });
     
 
     bombs = this.physics.add.group();
@@ -218,8 +222,6 @@ create ()
 
 update ()
 {       
-
-
     text1.x=player.x;
     text2.x=player.x+10
     if(ryu.x>600){
@@ -251,7 +253,7 @@ update ()
         player.anims.play('left', true);
         direction="left";
         // 可以理解为变身
-        player.setTexture('moon');
+        // player.setTexture('moon');
 
         console.log(player)
 
