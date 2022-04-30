@@ -74,12 +74,12 @@ create ()
     platforms = this.physics.add.staticGroup();
     // 创建一个平台,放在x=0，y=555处 以ground为背景，宽度扩大3倍。
     // setDisplaySize(1000,45)和setScale(2,1)都会拉伸失真
-    platforms.create(-400, 450, 'ground').setScale(2,2).setOrigin(0, 0).refreshBody();
+    platforms.create(0, 450, 'ground').setScale(2,2).setOrigin(0, 0).refreshBody();
     platforms.create(1200, 450, 'ground').setScale(2,2).setOrigin(0, 0).refreshBody();
     this.add.image(800,223,'house1').setOrigin(0,0).setFlipX(true);
     
     // 增加一个精灵，即主角
-    player = this.physics.add.sprite(100, 350, 'dude').setScale(1.5).setOrigin(0, 0);
+    player = this.physics.add.sprite(150, 350, 'dude').setScale(1.5).setOrigin(0, 0);
     
     // 可改变相机的长宽
     // this.cameras.main.setSize(0,900);
@@ -136,20 +136,20 @@ create ()
     });
 
     
-    ryu = this.add.sprite(100, 350);
-    //ryu = this.add.sprite(100, 350); .play('right','true')
-    tween = this.tweens.add({
+    // ryu = this.add.sprite(150, 350);
+    // //ryu = this.add.sprite(100, 350); .play('right','true')
+    // tween = this.tweens.add({
         
-            targets: ryu.anims,
-            x:700,//{from:,to:}
-            ease: 'Sine.inOut',
-            // frames: this.anims.generateFrameNumbers('dude', { start: 1, end: 4 }),
-            delay: 2000,
-            duration: 8000,
-            // onUpdate:TweenOnUpdateCallback,
-            // repeat:-1,
-            // yoyo: true,
-        });
+    //         targets: ryu.anims,
+    //         x:700,//{from:,to:}
+    //         ease: 'Sine.inOut',
+    //         // frames: this.anims.generateFrameNumbers('dude', { start: 1, end: 4 }),
+    //         delay: 2000,
+    //         duration: 8000,
+    //         // onUpdate:TweenOnUpdateCallback,
+    //         // repeat:-1,
+    //         // yoyo: true,
+    //     });
     
 
 
@@ -183,8 +183,8 @@ create ()
 
 
 
-    text1=this.add.image(100, 300, 'duihua').setOrigin(0, 0).setScale(1).setInteractive();
-    text2=this.add.text(120,320, '你好，我是陈涛！', { fontFamily: 'Georgia, "Goudy Bookletter 1911", Times, serif' ,color:'black'}).setInteractive();;
+    text1=this.add.image(player.x-100, player.y-48, 'duihua').setOrigin(0, 0).setScale(0.6).setInteractive();
+    text2=this.add.text(player.x-90, player.y-38,'你好，我是陈涛！', { fontFamily: 'Georgia, "Goudy Bookletter 1911", Times, serif' ,color:'#1DA57A'}).setInteractive();;
     //增加文字 
     scoreText = this.add.text(16, 16, 'score: 0', { fontSize: '32px', fill: '#000' });
 
@@ -222,18 +222,20 @@ create ()
 
 update ()
 {       
-    text1.x=player.x;
-    text2.x=player.x+10
-    if(ryu.x>600){
-        ryu.stop();
-    }
-    else{
-        ryu.x+=2;
-    }
-
+    text1.x=player.x-100;
+    text2.x=player.x-90;
+    /* 走到固定位置 */
+    // if(ryu.x>600){
+    //     ryu.stop();
+    // }
+    // else{
+    //     ryu.x+=2;
+    // }
     // if (tween.isPlaying())
     // {   
          
+    /* 、、、 */
+    
        
     //     // player.setFrame((i++)%8,false,false)
     //     // tween.updateTo('frames',(i++)%8, true);
@@ -252,6 +254,7 @@ update ()
         player.setVelocityX(-160);  
         player.anims.play('left', true);
         direction="left";
+      
         // 可以理解为变身
         // player.setTexture('moon');
 
@@ -265,6 +268,8 @@ update ()
         player.setVelocityX(160);       
         player.anims.play('right', true);
         direction="right";
+
+        
         // console.log(this.scene.isPaused('sceneA'))
     }
     else
