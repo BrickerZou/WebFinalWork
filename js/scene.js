@@ -32,7 +32,7 @@ const Scene0 = new Phaser.Class({
     this.load.image('star', 'assets/assets/decoration/star1.png');
     this.load.image('cloud1', cloud1);
 
-    // this.load.image('moon','assets/assets/decoration/moon1.png')
+    // this.load.image('moon','assets/assets/decoration/moon1.png');
     // this.load.image('wall','assets/assets/decoration/nightwall2.png')
     this.load.image('house1',house1)
     this.load.image('house2',house2)
@@ -212,7 +212,8 @@ create ()
          this.scene.run('sceneA');
      
 
-         this.scene.resume('scene0')
+         this.scene.resume('scene0');
+        //  this.scene.launc
          
       
 
@@ -256,7 +257,7 @@ update ()
         direction="left";
       
         // 可以理解为变身
-        // player.setTexture('moon');
+        player.setTexture('moon');
 
         console.log(player)
 

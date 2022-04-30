@@ -1,11 +1,11 @@
 import Scene0 from "./scene.js";
 import SceneA from "./sceneA.js";
-import SceneB from "./sceneB.js";
+// import SceneB from "./sceneB.js";
 
 var config = {
     Extends: Phaser.Scene,
     // parent:"game",
-    type: Phaser.AUTO,
+    type: Phaser.WEBGL,
     width: 1000,
     height: 600,
     physics: { 
@@ -17,8 +17,9 @@ var config = {
     },
     scene: [
         Scene0,
-        // SceneB,
+        SceneA,
         
+
     ]
 
 }

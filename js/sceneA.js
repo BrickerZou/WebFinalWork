@@ -26,14 +26,13 @@ const SceneA = new Phaser.Class({
         this.cursors;
     },
     preload:function(){
-        this.load.image('skyA', 'assets/sky.png');
+        this.load.image('skyA', 'assets//assets/back/sky1.png');
     },
     create(){
-        this.add.image(0, 0, 'skyA').setOrigin(0, 0).setScale(2);
+        this.add.image(0, 0, 'skyA').setOrigin(0, 0).setScale(1);
         this.add.text(160, 160, '小游戏界面', { fontSize: '39px', fill: '#000' });
         this.input.on('pointerdown', function () { 
             this.scene.remove("sceneA");
-
         }, this);
             
    },

@@ -101,3 +101,40 @@ this.scene.run("scene0")
 #texture
 bob = this.add.text(400, 300, "Phaser 3\nText Crop\nHell Yeah!", { fontFamily: "Arial Black", fontSize: 74, color: "#c51b7d", align: 'center' }).setStroke('#de77ae', 16).setOrigin(0.5);
 setCrop
+
+
+
+#json 素材精灵图
+{
+"frames": [
+    {
+     
+        "filename": "diamonds32x5",
+        "frame": {"x":585,"y":596,"w":318,"h":49},
+        "rotated": false,
+        "trimmed": true,
+        //如果是精灵图
+        "spriteSourceSize": {"x":1,"y":15,"w":318,"h":49},
+        "sourceSize": {"w":320,"h":64},
+        "pivot": {"x":0.5,"y":0.5}
+    
+    },]
+
+
+"meta": {
+        "app": "http://www.codeandweb.com/texturepacker",
+        "version": "1.0",
+        "image": "megaset-3.png",
+        "format": "RGBA8888",
+        "size": {"w":1023,"h":691},
+        "scale": "1",
+        "smartupdate": "$TexturePacker:SmartUpdate:5e8f90752cfd57d3adfb39bcd3eef1b6:87d98cec6fa616080f731b87726d6a1e:b55588eba103b49b35a0a59665ed84fd$"
+    }
+}
+
+this.load.atlas('jsonpng', 'assets/atlas/megaset-3.png', 'megaset.json');
+this.add.image(x, y, 'jsonpng', "key").setOrigin(0.5, 0);
+
+
+人物动作精灵图格式https://labs.phaser.io/assets/animations/soldier.json
+http://labs.phaser.io/edit.html?src=src/animation/pause%20all%20animations.js
