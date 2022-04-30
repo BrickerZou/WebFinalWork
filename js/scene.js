@@ -13,6 +13,7 @@ var scoreText;
 var tween;
 var i=1;
 var ryu;
+var text1,text2;
 const Scene0 = new Phaser.Class({
     Extends: Phaser.Scene,
    
@@ -35,6 +36,7 @@ const Scene0 = new Phaser.Class({
     // this.load.image('wall','assets/assets/decoration/nightwall2.png')
     this.load.image('house','assets/assets/decoration/house4.png')
     this.load.spritesheet('dude', 'assets/assets/charactor/shusheng.png', { frameWidth: 32, frameHeight: 45 });
+    this.load.image('duihua', 'assets/duihuakuang.png');
 },
 create ()
 {       
@@ -175,6 +177,10 @@ create ()
 
     bombs = this.physics.add.group();
 
+
+
+    text1=this.add.image(100, 300, 'duihua').setOrigin(0, 0).setScale(1).setInteractive();
+    text2=this.add.text(120,320, '你好，我是陈涛！', { fontFamily: 'Georgia, "Goudy Bookletter 1911", Times, serif' ,color:'black'}).setInteractive();;
     //增加文字 
     scoreText = this.add.text(16, 16, 'score: 0', { fontSize: '32px', fill: '#000' });
 
@@ -211,7 +217,11 @@ create ()
 
 
 update ()
-{   
+{       
+
+
+    text1.x=player.x;
+    text2.x=player.x+10
     if(ryu.x>600){
         ryu.stop();
     }
