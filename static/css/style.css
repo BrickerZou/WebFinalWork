@@ -1,0 +1,45 @@
+
+* {
+    margin: 0;
+    padding: 0;
+}
+body{
+    width: 100wh;
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+#game {
+    position: relative;
+    width: 1000px;
+    height: 600px;
+    margin: 0 auto;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    /* allowfullscreen:true */
+}
+
+.wenzitu{
+    position: absolute;
+    width: 600px;
+    height: 400px;
+    /* top: 150px;
+    left: 400px; */
+    font-family: "华文行楷";
+    font-size: 40px;
+    color: black;
+    /* rgb(0,0,0) */
+    background-image:url(../images/universal/tipsOpen.png) ;
+    background-size:600px 400px;
+}
+
+.wenzi{
+    padding: 60px;
+    margin-top: 20px;
+    font-family: "华文行楷";
+}
+
+

@@ -1,0 +1,58 @@
+
+全局变量区：
+var timeEvent
+var mengban
+var message
+var messageText
+var TEXT="kjashdjkashdjkabskjfkjashfnkjhanskjhnflaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa"
+
+preload:
+  this.load.image("message",MESSAGE)
+  this.load.image("mengban",MENGBAN)
+
+create中：
+createMessage(this) //调用创建
+
+
+场景外
+//定义全局变量：
+// message 显示的板
+// messageText 内容
+// mengban
+// TEXT文本内容
+function createMessage(this1){
+  message=this1.add.image(500,300,'message').setAlpha(0).setDepth(10)
+  mengban=this1.add.image(500,300,'mengban').setScale(2).setDepth(9).setAlpha(0);
+  messageText=this1.make.text({
+    x:300,
+    y:150,
+    text:'',
+    origin:{x:0,y:0},
+    style:{ 
+      color: 'black', 
+      font: '30px 华文行楷',
+      lineSpacing: 5,
+      wordWrap: { width: 400, useAdvancedWrap: true }
+    }
+  }).setDepth(10).setAlpha(0)
+}
+function showMessage(this1){
+  mengban.setAlpha(0.8)
+  message.setAlpha(1)
+  messageText.setAlpha(1)
+  // 暂停物理事件
+  this1.physics.pause();
+  timeEvent=this1.time.addEvent({
+    delay:50,
+    callback:function(){
+      messageText.setText(TEXT.substring(0,TEXT.length-timeEvent.repeatCount))
+          // 文字显示结束
+        if(timeEvent.repeatCount==0){
+          // 恢复物理事件
+          this1.physics.resume();
+        }
+    },
+    repeat:TEXT.length,
+    args:[]
+  }) 
+}

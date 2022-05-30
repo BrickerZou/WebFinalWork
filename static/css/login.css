@@ -1,0 +1,158 @@
+/* @font-face{
+    font-family:'';
+    src:url("7240.ttf");
+    } */
+
+    .login {
+      background: rgba(236,238,238,0.7);
+      border: 1px solid #42464b;
+      border-radius: 6px;
+      height: 300px;
+      width: 298px;
+      margin-left: 60px;
+      margin-top: 10px;
+
+    }
+    .login h2 {
+      border-bottom: 1px solid #a6abaf;
+      border-radius: 6px 6px 0 0;
+      box-sizing: border-box;
+      color: #727678;
+      display: block;
+      height: 46px;
+      font-size: 26px;
+      line-height: 46px;
+      margin: 0;
+      text-align: center;
+     
+    }
+    .register {
+      background: rgba(236,238,238,0.7);
+      border: 1px solid #42464b;
+      border-radius: 6px;
+      position: relative;
+      height: 300px;
+      width: 298px;
+      margin-left: 60px;
+      margin-top: 10px;
+      display: none;
+    }
+    .register h2{
+      border-bottom: 1px solid #a6abaf;
+      border-radius: 6px 6px 0 0;
+      box-sizing: border-box;
+      color: #727678;
+      display: block;
+      height: 46px;
+      line-height: 46px;
+      font-size: 26px;
+      margin: 0;
+      text-align: center;
+    }
+    input[type="password"], input[type="text"] {
+      font: 400 18px/1 '华文行楷';
+      border: 1px solid #a1a3a3;
+      border-radius: 4px;
+      box-shadow: 0 1px #fff;
+      box-sizing: border-box;
+      color: #696969;
+      height: 32px;
+      margin: 20px 0 0 29px;
+      padding-left: 12px;
+      transition: box-shadow 0.3s;
+      width: 240px;
+    }
+    input[type="password"]:focus, input[type="text"]:focus {
+      box-shadow: 0 0 4px 1px rgba(55, 166, 155, 0.3);
+      outline: 0;
+    }
+    .show-password {
+      display: block;
+      height: 16px;
+      margin: 26px 0 0 28px;
+      width: 87px;
+    }
+  
+    
+  
+    #loginButton{
+      width:150px;
+      height:30px;
+      display:block;
+      font: 500 24px/1 '华文行楷';
+      color:#fff;
+      text-decoration:none;
+      text-align:center;
+      text-shadow:1px 1px 0px #37a69b;
+      margin: 20px auto;
+      position:relative;
+      cursor:pointer;
+      border: none;  
+      background-color: rgb(13, 179, 166);
+      border-top-left-radius: 5px;
+      border-top-right-radius: 5px;
+      border-bottom-right-radius: 5px;
+      border-bottom-left-radius:5px;
+      box-shadow: inset 0px 1px 0px #2ab7ec, 0px 5px 0px 0px #497a78, 0px 10px 5px #999;
+    }
+    #toRegisterButton{
+      width:150px;
+      height:30px;
+      display:flex;
+      flex-direction: row;
+      justify-content: center;
+      font: 500 24px/1 '华文行楷';
+      color:#fff;
+      text-decoration:none;
+      text-align:center;
+      text-shadow:1px 1px 0px #37a69b;
+      margin: 20px auto;
+      position:relative;
+      cursor:pointer;
+      border: none;  
+      background-color: rgb(13, 179, 166);
+      border-top-left-radius: 5px;
+      border-top-right-radius: 5px;
+      border-bottom-right-radius: 5px;
+      border-bottom-left-radius:5px;
+      box-shadow: inset 0px 1px 0px #2ab7ec, 0px 5px 0px 0px #497a78, 0px 10px 5px #999;
+    }
+    
+    input[id="registerButton"] {
+      width:150px;
+      height:30px;
+      display:flex;
+      flex-direction: row;
+      justify-content: center;
+      font: 500 24px/1 '华文行楷';
+      color:#fff;
+      text-decoration:none;
+      text-align:center;
+      text-shadow:1px 1px 0px #37a69b;
+      margin: 40px auto;
+      position:relative;
+      cursor:pointer;
+      border: none;  
+      background-color: rgb(13, 179, 166);
+      border-top-left-radius: 5px;
+      border-top-right-radius: 5px;
+      border-bottom-right-radius: 5px;
+      border-bottom-left-radius:5px;
+      box-shadow: inset 0px 1px 0px #2ab7ec, 0px 5px 0px 0px #497a78, 0px 10px 5px #999;
+    }
+
+    
+    .shadow {
+      background: #000;
+      border-radius: 12px 12px 4px 4px;
+      box-shadow: 0 0 20px 10px #000;
+      height: 12px;
+      margin: 30px auto;
+      opacity: 0.2;
+      width: 270px;
+    }
+    
+    input[type="button"]:active {
+      top:3px;
+      box-shadow: inset 0px 1px 0px #2ab7ec, 0px 2px 0px 0px #31524d, 0px 5px 3px #999;
+    }    

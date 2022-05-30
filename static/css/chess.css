@@ -1,0 +1,64 @@
+#restart{   
+  position:absolute;
+  z-index: auto;
+  width: 140px;
+  height: 50px;
+  background-color: rgb(219, 146, 73);
+  border-radius: 10%;
+  transform:translateX(200%) translateY(-200%);
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+  font-family: 华文行楷;
+  font-size: large;
+
+}
+#restartimg{
+  width:50px;
+  height:50px;
+}
+#surrend{
+  position:absolute;
+  z-index: auto;
+  width: 140px;
+  height:50px;
+  border-radius: 0%;
+  transform:translateX(200%) translateY(0%);
+  background-color: rgb(219, 146, 73);
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+  border-radius: 10%;
+  font-family: 华文行楷;
+  font-size: large;
+}
+#surrendimg{
+  width:50px;
+  height:50px;
+}
+.point{
+  /* position: relative; */
+  /* z-index: auto; */
+  width: 15px;
+  height: 15px;
+  background-color: rgba(58, 218, 55, 0.5);
+  border-radius:100%;
+}
+#victory{
+  position: absolute;
+  z-index:auto;
+  width: 300px;
+  height: 300px;
+  border-radius: 20%;
+  transform:translateX(-20%) translateY(0%);
+}
+#fail{
+  position: absolute;
+  z-index:auto;
+  width: 300px;
+  height: 300px;
+  border-radius: 20%;
+  transform:translateX(-20%) translateY(0%);
+
+}
+
